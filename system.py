@@ -8,23 +8,30 @@ import time
 #后期加上各种计算功能
 
 #首先是欢迎界面啦
-welcome='\n\n'+"欢迎使用学生管理系统"+'\n\n'+"License:GNU GENERAL PUBLIC LICENSE"+'\n'+"         Version 3, 29 June 2007"+'\n\n\n'
+def welcome():
+    i=2 #密码验证
+    while i<=2:
+        passwd=raw_input("请输入密码：")
+        if passwd=='passwd':
+            break
+        elif passwd=='':
+            print "密码不可为空"
+        elif i==0:
+            exit()
+        else:
+            i=i-1
+            print "密码错误，请重新输入！"+'\n'+"剩余输入次数："+str(i)
+    print ''
+    print "============================================="
+    print "============================================="
+    print "欢迎使用学生管理系统"
+    print ''
+    print "License:GNU GENERAL PUBLIC LICENSE"
+    print "         Version 3, 29 June 2007"+'\n\n'
+    print "============================================="
+    print "============================================="
+welcome()
 
-#密码验证
-i=2
-while i<=2:
-    passwd=raw_input("请输入密码：")
-    if passwd=='passwd':
-        break
-    elif passwd=='':
-        print "密码不可为空"
-    elif i==0:
-        exit()
-    else:
-        i=i-1
-        print "密码错误，请重新输入！"+'\n'+"剩余输入次数："+str(i)
-
-print welcome
 
 #列出功能列表吧
 while 1:
