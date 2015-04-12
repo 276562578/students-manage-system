@@ -34,11 +34,11 @@ welcome()
 
 
 #列出功能列表吧
-while 1:
-    print "功能列表："+'\n'
-    print "1.查询学生信息"
-    print "2.提取学生信息"
-    print "3.修改学生信息"+'\n'
+print "功能列表："+'\n'
+print "1.查询学生信息"
+print "2.提取学生信息"
+print "3.修改学生信息"+'\n'
+while 1:   #判断输入    
     i=raw_input("请输入操作序号:")
     if i in ['1','2','3']:
         break
@@ -48,12 +48,39 @@ while 1:
     else:
         print '\n'+"===================="+'\n'+"参数错误，请重新输入"+'\n'+"===================="+'\n'
         continue
+
+
+
+
 if i==1:
     searchdb()
 elif i==2:
     getdb()
 elif i==3:
     updatedb()
+
+
+#查询信息的菜单(未完成)
+def searchdb():
+    print "================================"
+    print "||姓名查找请直接回车||"
+    print "||学号输入后两位即可||"
+    while 1:
+        id=raw_input('请输入学号：')
+        if id=='':
+            name()
+            break
+            #name=raw_input('请输入姓名：')
+        elif len(id)>>8:
+            print "学号输入有误，请重新输入！"
+            continue
+        elif 2<<len(id)<<8:
+            print "学号输入有误，请重新输入！"
+        else:
+            print " "
+#判断选择的功能
+def name():
+    print "ok"
 
 
 
