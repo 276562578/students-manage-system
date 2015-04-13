@@ -34,6 +34,7 @@ def welcome():
     print "         Version 3, 29 June 2007"+'\n\n'
     print "============================================="
     print "============================================="
+    db_student=sqlite3.connect("./student.db")
 welcome()
 
 
@@ -67,7 +68,30 @@ def searchdb():
         elif 2<<len(id)<<8:
             print "学号输入有误，请重新输入！"
         else:
-            print " "
+            pass
+
+
+
+def getdb():
+    print '\n'+"================================"
+    print ""
+    print ""
+    while 1:
+        list=raw_input("请选择想要输出的项目(以,分隔)：").split(",")
+        if len(list)<=1:
+            print "请输入至少两个项目！(是否以半角符号\",\"为分割符？)"
+        elif:
+            pass
+
+
+def updatedb():
+    print '\n'+"================================"
+    print "1.新增一个项目"
+    print "2.新增一位学生"
+    print "3.修改一个项目"
+    print "4.修改一位学生"
+    print "5.删除一个项目"
+    print "6.删除一位学生"
 
 
 #判断选择的功能
@@ -79,8 +103,6 @@ elif i=='3':
     updatedb()
 
 
-#程序启动先连接数据库
-db_student=sqlite3.connect("./student.db")
 
 #先定义个功能选择的
 
