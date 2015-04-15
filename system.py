@@ -4,6 +4,7 @@ import sqlite3
 import xlrd
 import time
 import getpass
+import backend
 #程序大体是先输出功能列表，然后按照序号选择功能
 #数据库中提取的数据以excel表格的形式输出
 #后期加上各种计算功能
@@ -38,20 +39,6 @@ def welcome():
 welcome()
 
 
-#列出功能列表吧
-print "功能列表："+'\n'
-print "1.查询学生信息"
-print "2.提取学生信息"
-print "3.修改学生信息"+'\n'
-while 1:   #判断输入    
-    i=raw_input("请输入操作序号:")
-    if i in ['1','2','3']:
-        break
-    elif i=='':
-        print "参数不能为空"
-    else:
-        print '\n'+"===================="+'\n'+"参数错误，请重新输入"+'\n'+"===================="+'\n'
-
 
 #查询信息的菜单(未完成)
 def searchdb():
@@ -63,15 +50,16 @@ def searchdb():
         if id=='':
             name=raw_input('请输入姓名：')
             pass
-        elif len(id)>>8:
-            print "学号输入有误，请重新输入！"
-        elif 2<<len(id)<<8:
+        elif len(id)!=8 or len(id)!=2 :
             print "学号输入有误，请重新输入！"
         else:
+            if len(id)==2:
+                pass
+            backend.read(student,)
             pass
 
 
-
+#提取信息的菜单-未完成
 def getdb():
     print '\n'+"================================"
     print ""
@@ -84,6 +72,7 @@ def getdb():
             pass
 
 
+#修改信息的菜单-未完成
 def updatedb():
     print '\n'+"================================"
     print "1.新增一个项目"
@@ -94,17 +83,25 @@ def updatedb():
     print "6.删除一位学生"
 
 
-#判断选择的功能
-if i=='1':
-    searchdb()
-elif i=='2':
-    getdb()
-elif i=='3':
-    updatedb()
+#列出功能列表吧
+def mainmenu():
+    print "功能列表："+'\n'
+    print "1.查询学生信息"
+    print "2.提取学生信息"
+    print "3.修改学生信息"+'\n'
+    while 1:   #判断输入    
+        i=raw_input("请输入操作序号:")
+        if i=='1':
+            searchdb()
+        if i=='2':
+            getdb()
+        if i=='3':
+            updatedb()
+        elif i==''
+            print "参数不能为空"
+        else:
+            print '\n'+"===================="+'\n'+"参数错误，请重新输入"+'\n'+"===================="+'\n'
 
-
-
-#先定义个功能选择的
 
 
 
