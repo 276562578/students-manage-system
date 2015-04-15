@@ -36,7 +36,10 @@ def delete(filename,key):
     c.execute("""DELETE FROM students WHERE id=?""", (key,))
     conn.commit()
     conn.close()
-
+#__int__():
+#       conn-sqlite3.connect()
+#       c=conn.cursor()
+#is that ok?
 #TODO: alter table structure
 #TODO: specify column to read and write
 #TODO: maybe use a key-value store!!!
